@@ -1,39 +1,7 @@
-# Mantine Next Template
+# Grinberg's Microblog API, Next.js, Mantine
 
-Get started with Mantine + Next with just a few button clicks.
-Click `Use this template` button at the header of repository or [follow this link](https://github.com/mantinedev/mantine-next-template/generate) and
-create new repository with `@mantine` packages. Note that you have to be logged in to GitHub to generate template.
+Initially tried emulating his tutorial with Next.js and a [client generated from OpenAPI](https://github.com/ferdikoomen/openapi-typescript-codegen) but had trouble with loading the access token to the OpenAPI client before everything else, so I resorted to using his API client instead.
 
-## Features
+Token is stored in localStorage for now, [as documented under Grinberg's tutorial](https://blog.miguelgrinberg.com/post/the-react-mega-tutorial-chapter-8-authentication). Security concerns are also discussed there.
 
-This template comes with several essential features:
-
-- Server side rendering setup for Mantine
-- Color scheme is stored in cookie to avoid color scheme mismatch after hydration
-- Storybook with color scheme toggle
-- Jest with react testing library
-- ESLint setup with [eslint-config-mantine](https://github.com/mantinedev/eslint-config-mantine)
-
-## npm scripts
-
-### Build and dev scripts
-
-- `dev` – start dev server
-- `build` – bundle application for production
-- `export` – exports static website to `out` folder
-- `analyze` – analyzes application bundle with [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)
-
-### Testing scripts
-
-- `typecheck` – checks TypeScript types
-- `lint` – runs ESLint
-- `prettier:check` – checks files with Prettier
-- `jest` – runs jest tests
-- `jest:watch` – starts jest watch
-- `test` – runs `jest`, `prettier:check`, `lint` and `typecheck` scripts
-
-### Other scripts
-
-- `storybook` – starts storybook dev server
-- `storybook:build` – build production storybook bundle to `storybook-static`
-- `prettier:write` – formats all files with Prettier
+A non-breaking Next.js error pops up while being redirected after login, but I am not sure how to address it.

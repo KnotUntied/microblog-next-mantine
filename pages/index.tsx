@@ -1,11 +1,13 @@
-import { Welcome } from '../components/Welcome/Welcome';
-import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
+import { Container } from '@mantine/core';
+import { Posts } from '../components/Posts';
+import PrivateRoute from '../components/PrivateRoute';
 
-export default function HomePage() {
+function FeedPage() {
   return (
-    <>
-      <Welcome />
-      <ColorSchemeToggle />
-    </>
+    <Container>
+      <Posts write={true} />
+    </Container>
   );
 }
+
+export default PrivateRoute(FeedPage);
