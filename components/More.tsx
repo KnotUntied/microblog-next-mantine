@@ -7,7 +7,7 @@ interface MoreProps {
   loadNextPage: () => void,
 }
 
-export function More({ pagination, loadNextPage }: MoreProps) {
+export default function More({ pagination, loadNextPage }: MoreProps) {
   let thereAreMore = false;
   if (pagination) {
     const { offset, count, total } = pagination;

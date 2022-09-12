@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Loader, Stack, Text } from '@mantine/core';
-import { More } from './More';
-import { Post } from './Post';
+import More from './More';
+import Post from './Post';
 import { useApi } from '../contexts/ApiProvider';
 import Write from './Write';
 import { DateTimePagination, Post as PostModel } from '../client';
@@ -11,7 +11,7 @@ interface PostsProps {
   write?: boolean
 };
 
-export function Posts({ content, write }: PostsProps) {
+export default function Posts({ content, write }: PostsProps) {
   const [posts, setPosts] = useState<PostModel[] | null | undefined>();
   const [pagination, setPagination] = useState<DateTimePagination>();
   const api = useApi();

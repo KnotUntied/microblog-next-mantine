@@ -3,7 +3,8 @@ const BASE_API_URL = process.env.NEXT_PUBLIC_BASE_API_URL;
 export default class MicroblogApiClient {
   base_url: string;
 
-  constructor() {
+  constructor(onError: () => void) {
+    this.onError = onError;
     this.base_url = BASE_API_URL + '/api';
   }
 
@@ -17,6 +18,9 @@ export default class MicroblogApiClient {
         localStorage.setItem('accessToken', refreshResponse.body.access_token);
         response = await this.requestInternal(options);
       }
+    }
+    if (response.status >= 500 && this.onError) {
+      this.onError(response);
     }
     return response;
   }

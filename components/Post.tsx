@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import Link from 'next/link';
 import {
   Anchor,
@@ -16,7 +17,7 @@ interface PostProps {
   post: PostModel
 };
 
-export function Post({ post }: PostProps) {
+export default memo(function Post({ post }: PostProps) {
   return (
     <Group noWrap spacing="xs" align="start">
       <Avatar
@@ -40,4 +41,4 @@ export function Post({ post }: PostProps) {
       </Stack>
     </Group>
   );
-}
+});

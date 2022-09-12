@@ -8,6 +8,10 @@ interface ApiProviderProps {
 const ApiContext = createContext<MicroblogApiClient | undefined>(undefined);
 
 export default function ApiProvider({ children }: ApiProviderProps) {
+  const onError = () => {
+    flash('An unexpected error has occurred. Please try again.', 'danger');
+  };
+
   const api: MicroblogApiClient = new MicroblogApiClient();
 
   return (
